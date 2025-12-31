@@ -3,8 +3,7 @@ import json
 
 # --- Seadistus ---
 # See on sinu lokaalselt töötava serveri aadress ja lõpp-punkt
-API_URL = "http://127.0.0.1:5000/api/decision"
-
+API_URL = "https://beerbot-liisi-ks-projects.vercel.app/api/decision"
 # Andmed, mida me handshake päringus saadame
 handshake_data = {
     "handshake": True,
