@@ -169,9 +169,3 @@ def calculate_glassbox_orders(weeks_data):
         orders[role] = max(0, int(quantity))
         
     return orders
-
-# See osa on vajalik, kui käivitad faili otse (mitte 'flask run' käsuga)
-if __name__ == "__main__":
-    # Verceli ja sarnaste platvormide jaoks on oluline PORT muutuja
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=True)
