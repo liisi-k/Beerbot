@@ -80,7 +80,8 @@ def calculate_blackbox_orders(weeks_data):
         
         # 2. Nõudluse silumine
         demand_history = [state['incoming_orders'] for state in role_history]
-        window = min(current_week_number, SMOOTHING_WINDOW)
+        window = min(len(demand_history), SMOOTHING_WINDOW)
+        window = max(1, window)
         smoothed_demand = sum(demand_history[-window:]) / window
 
         # 3. Laoseisu ja torujuhtme hindamine
@@ -109,7 +110,8 @@ def calculate_glassbox_orders(weeks_data):
     retailer_history = [week['roles']['retailer'] for week in weeks_data]
     customer_demand_history = [state['incoming_orders'] for state in retailer_history]
     
-    window = min(current_week_number, SMOOTHING_WINDOW)
+    window = min(len(customer_demand_history), SMOOTHING_WINDOW)
+    window = max(1, window)
     smoothed_customer_demand = sum(customer_demand_history[-window:]) / window
 
     # 2. Jaemüüja kasutab parimat BlackBox loogikat, kuna tema on kliendile kõige lähemal
