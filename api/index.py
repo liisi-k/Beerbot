@@ -3,10 +3,10 @@ from flask import Flask, request, jsonify
 
 STUDENT_EMAIL = "likask@taltech.ee"
 ALGORITHM_NAME = "StabiilneAnkur"
-VERSION = "v1.1.3"
+VERSION = "v1.1.4"
 
 # Soovitud varu nädalates 
-WEEKS_OF_SUPPLY_TARGET = 2
+WEEKS_OF_SUPPLY_TARGET = 2.5
 # Silumise aken 
 SMOOTHING_WINDOW = 4
 # Korrektsioonifaktor
